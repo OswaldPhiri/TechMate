@@ -1,4 +1,3 @@
--- Seed Symptoms
 INSERT INTO Symptoms (name, description) VALUES
 ('PC won\'t boot', 'No power or no POST'),
 ('Slow performance', 'System lagging or freezing'),
@@ -9,7 +8,6 @@ INSERT INTO Symptoms (name, description) VALUES
 ('Random restarts', 'Reboots unexpectedly'),
 ('No sound', 'Audio not working');
 
--- Seed Problems
 INSERT INTO Problems (name, type, description) VALUES
 ('Faulty Power Supply', 'hardware', 'Power supply failure or cable issues'),
 ('Corrupted OS Files', 'software', 'Damaged system files impacting boot/performance'),
@@ -21,7 +19,6 @@ INSERT INTO Problems (name, type, description) VALUES
 ('Network Adapter Issue', 'hardware', 'NIC disabled, driver, or router issue'),
 ('Malware/Excessive Startup Apps', 'software', 'Malware or too many startup items');
 
--- Seed Solutions
 INSERT INTO Solutions (problem_id, solution_steps) VALUES
 ((SELECT id FROM Problems WHERE name='Faulty Power Supply'),
  '1. Verify power cable and outlet.\n2. Reseat motherboard power connectors.\n3. Try a known-good PSU.\n4. Check power button/front panel connectors.'),
@@ -42,7 +39,6 @@ INSERT INTO Solutions (problem_id, solution_steps) VALUES
 ((SELECT id FROM Problems WHERE name='Malware/Excessive Startup Apps'),
  '1. Run antivirus/malware scan.\n2. Disable unnecessary startup apps.\n3. Clean temp files.\n4. Consider OS reset if unresolved.');
 
--- Map Problem <-> Symptoms with likelihood weights (0.1 to 1.0)
 INSERT INTO ProblemSymptoms (symptom_id, problem_id, likelihood)
 SELECT s.id, p.id, 0.9 FROM Symptoms s, Problems p
 WHERE s.name = 'PC won''t boot' AND p.name = 'Faulty Power Supply';
