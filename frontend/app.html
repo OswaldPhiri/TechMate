@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TechMate – Troubleshooting Assistant</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container app-wrap">
+      <header>
+        <div class="brand">TechMate</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <a class="btn secondary" href="./index.html">Home</a>
+          <div class="toggle">
+            <label for="themeToggle">Dark mode</label>
+            <input id="themeToggle" type="checkbox" />
+          </div>
+        </div>
+      </header>
+
+      <section class="app-grid">
+        <div class="panel">
+          <h3>Select Symptoms</h3>
+          <div id="symptomList" class="symptom-list" aria-live="polite"></div>
+          <div class="actions">
+            <button id="clearBtn" class="btn secondary" type="button">Clear</button>
+            <button id="diagnoseBtn" class="btn" type="button">Diagnose</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Results</h3>
+          <div id="results" class="results" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <footer class="footer">Need help? Use the chatbot at the corner.</footer>
+    </div>
+
+    <script src="./app.js"></script>
+
+    <!-- BotPenguin Widget: Replace with your official embed code from BotPenguin dashboard -->
+    <script>
+      // Example placeholder:
+      // window.botpenguinSettings = { botId: 'YOUR_BOTPENGUIN_BOT_ID' };
+      // (function(){ var s=document.createElement('script'); s.src='https://cdn.botpenguin.com/widget.js'; s.async=true; document.body.appendChild(s); })();
+    </script>
+  </body>
+  </html>
+
+
